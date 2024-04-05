@@ -1,18 +1,18 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     onMount(() => {
-        const header = document.querySelector('.header');
-        const hidden = document.querySelector('.hidden');
+        const header = document.querySelector('.header') as HTMLElement;
+        const hidden = document.querySelector('.hidden') as HTMLElement;
         header?.addEventListener('mouseover', () => {
-            hidden.style.display = 'block';
+            hidden.style.display = 'flex';
         });
-        header?.addEventListener('mouseleave', () => {
+        header?.addEventListener('mouseout', () => {
             hidden.style.display = 'none';
         });
     });
 </script>
 
-<div>
+<div class="container">
     <div class="header">
         <h1>Kalle Riit</h1>
         <div class="hidden">
@@ -36,7 +36,7 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
     
-    div {
+    .container {
         font-family: 'Playfair Display', serif;
         display: flex;
         flex-direction: column;
@@ -46,20 +46,28 @@
         font-size: 2rem;
     }
     .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding:10px;
-        transition: 0.3s;
+        transition: 0.4s;
+        width: 20%;
+        height: 40%;
     }
     .header:hover{
         transform: translateY(-50px);
+    }
+    .header h1{ 
+        text-align: center;
+        margin: 0;
     }
     .routes{
         width: 100%;
         list-style-type: none;
         display: flex;
-        margin: none;
-        padding: none;
         justify-content: space-between;
-        
+        padding: 0;
+        margin: 0;      
     }
     .routes a{
         text-decoration: none;
@@ -67,10 +75,30 @@
         color: black;
     }
     .routes a:hover{
-        text-decoration: underline;
-
+        text-decoration: 2px underline;
+        animation: underline 0.2s;
     }
     .hidden{
         display:none;
+        animation: fadeIn 0.4s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes underline {
+        from {
+            text-decoration: 2px underline white;
+        }
+        to {
+            text-decoration: 2px underline black;
+        }
     }
 </style>
+
