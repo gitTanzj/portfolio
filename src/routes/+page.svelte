@@ -18,13 +18,13 @@
         <div class="hidden">
             <ul class="routes">
                 <li>
-                    <a href="/+page">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/about/+page">About</a>
+                    <a href="/about">About</a>
                 </li>
                 <li>
-                    <a href="/projects/+page">Projects</a>
+                    <a href="/projects">Projects</a>
                 </li>
             </ul>
         </div>
@@ -36,6 +36,8 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
     
+    
+
     .container {
         font-family: 'Playfair Display', serif;
         display: flex;
@@ -67,7 +69,8 @@
         display: flex;
         justify-content: space-between;
         padding: 0;
-        margin: 0;      
+        margin: 0;   
+        gap: 10%;   
     }
     .routes a{
         text-decoration: none;
@@ -75,8 +78,7 @@
         color: black;
     }
     .routes a:hover{
-        text-decoration: 2px underline;
-        animation: underline 0.2s;
+        animation: underline 0.4s;
     }
     .hidden{
         display:none;
