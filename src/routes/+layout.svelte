@@ -44,4 +44,8 @@
     .navigate-back a{
         color: var(--antiflash-white);
     }
+    .material-symbols-outlined{
+        font-family: 'Material Symbols Outlined', sans-serif;
+        font-size: 4rem;
+    }
 </style>
