@@ -41,11 +41,11 @@
                 <a href={base}>Home</a>
             </li>
             <li>
-                <a href="/about">About</a>
+                <a href="{base}/about">About</a>
                 
             </li>
             <li>
-                <a href="/projects">Projects</a>
+                <a href="{base}/projects">Projects</a>
             </li>
         </ul>
     </div>
