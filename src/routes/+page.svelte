@@ -114,7 +114,7 @@
 
     @keyframes underline {
         from {
-            text-underline-offset: 0.25em;
+            text-underline-offset: 0.4em;
             text-decoration: 2px underline var(--raisin-black);
         }
         to {
