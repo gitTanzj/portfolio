@@ -1,5 +1,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import { base } from '$app/paths';
+
     onMount(() => {
         let currentURL = window.location.href;
         document.querySelectorAll('a').forEach(link => {
@@ -36,7 +38,7 @@
     <div class="hidden">
         <ul class="routes">
             <li>
-                <a href="/">Home</a>
+                <a href={base}>Home</a>
             </li>
             <li>
                 <a href="/about">About</a>
