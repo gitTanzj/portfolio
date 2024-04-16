@@ -1,32 +1,47 @@
 <script lang="ts">
     import '$lib/styles/global.css'
+    import { page } from '$app/stores';
+    import { onDestroy, onMount  } from 'svelte';
 
-    import { onMount } from 'svelte';
-
+    let currentPage: any = {};
+    const unsubscribe = page.subscribe(value => {
+        currentPage = value;
+    });
+    
     onMount(() => {
-        let currentURL = window.location.href;
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                console.log(currentURL, link.href)
-                if (currentURL === link.href){
-                    e.preventDefault();
-                    const reminder = document.querySelector('.link-reminder') as HTMLElement;
-                    reminder.style.opacity = '1';
-                    reminder.style.transform = 'translateY(10%)';
-                    setTimeout(() => {
-                        reminder.style.opacity = '0';
-                        reminder.style.transform = 'translateY(-10%)';
-                    }, 1000);
-                }
-            });
-        })
+        console.log(currentPage)
     })
+
+    onDestroy(() => {
+        unsubscribe();
+    });
 </script>
 
 
 <div class="container">
+    {#if currentPage.route.id !== '/'}
+        <div class="navigate-back">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+            <a href='/'>
+                <span class="material-symbols-outlined">
+                    chevron_left
+                </span>
+            </a>
+        </div>
+    {/if}
     <slot></slot>
     <div class="footer">
         <p>© 2024 Kalle Riit</p>
     </div>
 </div>
+
+<style>
+    .navigate-back{
+        position: absolute;
+        top: 50%;
+        left: 5%;
+    }
+    .navigate-back a{
+        color: var(--antiflash-white);
+    }
+</style>

@@ -1,6 +1,21 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     onMount(() => {
+        let currentURL = window.location.href;
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (currentURL === link.href){
+                    const reminder = document.querySelector('.link-reminder') as HTMLElement;
+                    reminder.style.opacity = '1';
+                    reminder.style.transform = 'translateY(10%)';
+                    setTimeout(() => {
+                        reminder.style.opacity = '0';
+                        reminder.style.transform = 'translateY(-10%)';
+                    }, 1000);
+                }
+            });
+        })
+
 
         const header = document.querySelector('.header') as HTMLElement;
         const hidden = document.querySelector('.hidden') as HTMLElement;
