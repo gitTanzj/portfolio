@@ -2,23 +2,6 @@
     import { onMount } from 'svelte';
     onMount(() => {
 
-        let currentURL = window.location.href;
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                console.log(currentURL, link.href)
-                if (currentURL === link.href){
-                    e.preventDefault();
-                    const reminder = document.querySelector('.link-reminder') as HTMLElement;
-                    reminder.style.opacity = '1';
-                    reminder.style.transform = 'translateY(10%)';
-                    setTimeout(() => {
-                        reminder.style.opacity = '0';
-                        reminder.style.transform = 'translateY(-10%)';
-                    }, 1000);
-                }
-            });
-        })
-
         const header = document.querySelector('.header') as HTMLElement;
         const hidden = document.querySelector('.hidden') as HTMLElement;
         header?.addEventListener('mouseover', () => {
@@ -32,52 +15,26 @@
     
 </script>
 
-<div class="container">
-    <p class="link-reminder">You are already on this page ; &#41;</p>
-    <div class="header">
-        <h1>Kalle Riit</h1>
-        <div class="hidden">
-            <ul class="routes">
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/about">About</a>
-                    
-                </li>
-                <li>
-                    <a href="/projects">Projects</a>
-                </li>
-            </ul>
-        </div>
+<p class="link-reminder">You are already on this page ; &#41;</p>
+<div class="header">
+    <h1>Kalle Riit</h1>
+    <div class="hidden">
+        <ul class="routes">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/about">About</a>
+                
+            </li>
+            <li>
+                <a href="/projects">Projects</a>
+            </li>
+        </ul>
     </div>
-
-
-</div>
+</div>  
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-    
-    :global(:root){
-        --raisin-black: #272727ff;
-        --mustard: #fed766ff;
-        --moonstone: #009fb7ff;
-        --dim-gray: #696773ff;
-        --antiflash-white: #eff1f3ff;
-
-        background-color: var(--raisin-black);
-        color: var(--antiflash-white);
-    }
-
-    .container {
-        font-family: 'Playfair Display', serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-size: 2rem;
-    }
     .header{
         display: flex;
         flex-direction: column;
