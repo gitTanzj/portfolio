@@ -38,7 +38,7 @@
     <div class="hidden">
         <ul class="routes">
             <li>
-                <a href={base}>Home</a>
+                <a href="{base}/">Home</a>
             </li>
             <li>
                 <a href="{base}/about">About</a>
