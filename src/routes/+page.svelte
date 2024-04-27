@@ -60,9 +60,10 @@
         transition: 0.4s;
         width: 40%;
         height: 40%;
+        text-wrap: nowrap;
     }
     .header:hover {
-        transform: translateY(-50px);
+        transform: translateY(-25px);
     }   
     .header h1{
         text-align: center;
@@ -106,13 +107,6 @@
     }
 
     @media(max-width: 768px){
-        .header{
-            width: 100%;
-            height: 10%;
-        }
-        .header h1{
-            font-size: 3rem;
-        }
         .routes{
             gap: 5%;
         }
