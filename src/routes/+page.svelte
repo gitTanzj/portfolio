@@ -58,13 +58,13 @@
         justify-content: center;
         padding:10px;
         transition: 0.4s;
-        width: 20%;
+        width: 40%;
         height: 40%;
     }
     .header:hover {
         transform: translateY(-50px);
     }   
-    .header h1{ 
+    .header h1{
         text-align: center;
         margin: 0;
         transition: 0.5s;
@@ -103,6 +103,22 @@
         position: absolute;
         top: 20%;
         opacity: 0;
+    }
+
+    @media(max-width: 768px){
+        .header{
+            width: 100%;
+            height: 10%;
+        }
+        .header h1{
+            font-size: 3rem;
+        }
+        .routes{
+            gap: 5%;
+        }
+        .routes a{
+            font-size: 1.5rem;
+        }
     }
 
     @keyframes fadeIn {
