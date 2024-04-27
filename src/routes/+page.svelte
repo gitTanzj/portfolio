@@ -107,6 +107,13 @@
     }
 
     @media(max-width: 768px){
+        .header{
+            width: 100%;
+            height: 10%;
+        }
+        .header h1{
+            font-size: 3rem;
+        }
         .routes{
             gap: 5%;
         }
