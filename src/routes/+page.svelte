@@ -1,5 +1,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import { base } from '$app/paths';
+
     onMount(() => {
         let currentURL = window.location.href;
         document.querySelectorAll('a').forEach(link => {
@@ -36,14 +38,14 @@
     <div class="hidden">
         <ul class="routes">
             <li>
-                <a href="/">Home</a>
+                <a href="{base}/">Home</a>
             </li>
             <li>
-                <a href="/about">About</a>
+                <a href="{base}/about">About</a>
                 
             </li>
             <li>
-                <a href="/projects">Projects</a>
+                <a href="{base}/projects">Projects</a>
             </li>
         </ul>
     </div>
@@ -56,13 +58,14 @@
         justify-content: center;
         padding:10px;
         transition: 0.4s;
-        width: 20%;
+        width: 40%;
         height: 40%;
+        text-wrap: nowrap;
     }
     .header:hover {
-        transform: translateY(-50px);
+        transform: translateY(-25px);
     }   
-    .header h1{ 
+    .header h1{
         text-align: center;
         margin: 0;
         transition: 0.5s;
@@ -101,6 +104,22 @@
         position: absolute;
         top: 20%;
         opacity: 0;
+    }
+
+    @media(max-width: 768px){
+        .header{
+            width: 100%;
+            height: 10%;
+        }
+        .header h1{
+            font-size: 3rem;
+        }
+        .routes{
+            gap: 5%;
+        }
+        .routes a{
+            font-size: 1.5rem;
+        }
     }
 
     @keyframes fadeIn {
