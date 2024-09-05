@@ -1,4 +1,6 @@
-
+<svelte:head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</svelte:head>
 
 
 <script lang="ts">
@@ -22,7 +24,6 @@
 <div class="container">
     {#if currentPage.route.id !== "/"}
         <div class="navigate-back">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
             <a href="{base}/">
                 <span class="material-symbols-outlined">
                     chevron_left

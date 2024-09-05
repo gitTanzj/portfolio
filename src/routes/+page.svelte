@@ -33,37 +33,46 @@
 </script>
 
 <p class="link-reminder">You are already on this page ; &#41;</p>
-<div class="header">
-    <h1>Kalle Riit</h1>
-    <div class="hidden">
-        <ul class="routes">
-            <li>
-                <a href="{base}/">Home</a>
-            </li>
-            <li>
-                <a href="{base}/about">About</a>
-                
-            </li>
-            <li>
-                <a href="{base}/projects">Projects</a>
-            </li>
-        </ul>
-    </div>
-</div>  
+<div class="header-container">
+    <div class="header">
+        <h1>Kalle Riit</h1>
+        <div class="hidden">
+            <ul class="routes">
+                <li>
+                    <a href="{base}/">Home</a>
+                </li>
+                <li>
+                    <a href="{base}/about">About</a>
+                    
+                </li>
+                <li>
+                    <a href="{base}/projects">Projects</a>
+                </li>
+            </ul>
+        </div>
+    </div> 
+</div> 
 
 <style>
+    .header-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+        height: 50%;
+    }
     .header{
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding:10px;
         transition: 0.4s;
-        width: 40%;
-        height: 40%;
         text-wrap: nowrap;
+        width: 100%;
+        height: 80%;
     }
-    .header:hover {
-        transform: translateY(-25px);
+    .header:hover{
+        transform: translateY(-20px);
     }   
     .header h1{
         text-align: center;
