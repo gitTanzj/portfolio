@@ -42,9 +42,10 @@
         position: absolute;
         top: 50%;
         left: 5%;
+        z-index: 101;
     }
     .navigate-back:hover{
-        animation: arrow-bounce 0.4s infinite alternate;
+        animation: arrowBounce 0.4s infinite alternate;
     }
     .navigate-back a{
         color: var(--antiflash-white);
@@ -63,7 +64,7 @@
         }
     }
 
-    @keyframes arrow-bounce {
+    @keyframes arrowBounce {
         from {
             transform: translateX(0);
         }
